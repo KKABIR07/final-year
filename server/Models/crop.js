@@ -6,7 +6,7 @@ const CropSchema = new mongoose.Schema({
     GrowingSeasons: [String],
     Temperature: { type: String },
     SoilType: { type: String },
-    Fertilizer: { type: String },
+    Fertilizer: [String],
     Pesticides: [String],
     CommonPestsDiseases: [String],
 });
@@ -17,7 +17,7 @@ const VegetableSchema = new mongoose.Schema({
     GrowingSeasons: [String],
     Temperature: { type: String },
     SoilType: { type: String },
-    Fertilizer: { type: String },
+    Fertilizer: [String],
     Pesticides: [String],
     CommonPestsDiseases: [String],
 });
@@ -28,7 +28,7 @@ const FruitSchema = new mongoose.Schema({
     GrowingSeason: { type: String },
     Temperature: { type: String },
     SoilType: { type: String },
-    Fertilizer: { type: String },
+    Fertilizer:  [String],
     Pesticides: [String],
     CommonPestsDiseases: [String],
 });
