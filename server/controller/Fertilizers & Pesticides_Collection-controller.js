@@ -11,4 +11,37 @@ const getFertilizerPesticideData = async (req, res) => {
     }
 };
 
-module.exports = { getFertilizerPesticideData };
+const postFertilizer = async (req, res) => {
+    try {
+        const { 
+            product_name, 
+            crop_applicable, 
+            region, 
+            recommended_dosage, 
+            organic_chemical, 
+            application_timing, 
+            side_effects 
+        } = req.body;
+
+        
+
+        const newFertilizer = new FertilizerPesticide({
+            product_name,
+            crop_applicable,
+            region,
+            recommended_dosage,
+            organic_chemical,
+            application_timing,
+            side_effects
+        });
+
+        const savedFertilizer = await newFertilizer.save();
+        res.status(201).json(savedFertilizer);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: `Error saving fertilizer data: ${error.message}` });
+    }
+};
+
+
+module.exports = { getFertilizerPesticideData,postFertilizer };

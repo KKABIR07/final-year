@@ -105,13 +105,13 @@ const dist = async (req, res) =>{
     try {
         const { District, Crops } = req.body;
         
-        // Create a new Agriculture document
+        
         const newAgriculture = new Agriculture({
             District,
             Crops,
         });
 
-        // Save to the database
+        
         const savedAgriculture = await newAgriculture.save();
         
         res.status(201).json(savedAgriculture);
