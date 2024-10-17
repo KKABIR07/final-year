@@ -25,7 +25,7 @@ const VegetableSchema = new mongoose.Schema({
 
 const FruitSchema = new mongoose.Schema({
     Name: { type: String, required: true },
-    GrowingSeason: { type: String },
+    GrowingSeason: [String],
     Temperature: { type: String },
     SoilType: { type: String },
     Fertilizer:  [String],
