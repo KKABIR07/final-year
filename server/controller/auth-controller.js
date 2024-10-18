@@ -121,8 +121,24 @@ const dist = async (req, res) =>{
     }
 } ;
 
+const getCropsByname = async (req, res) => {
+    try {
+      const districtName = req.params.District;
+      
+      const agri = await Agriculture.findOne({ District: districtName });
+      
+      if (!agri) {
+        return res.status(404).json({ message: "Crop district not found" });
+      }
+      return res.status(200).json(agri);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
+  
 
 
-module.exports = { home, getAgricultureData,getCropsByid,register,login,dist };
+module.exports = { home, getAgricultureData,getCropsByid,register,login,dist,getCropsByname };
 
 
