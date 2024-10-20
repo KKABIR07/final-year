@@ -1,16 +1,22 @@
-import React from "react";
+import  { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./page/Home";
-import All_Crop_dist from "./page/All_Crop_dist";
-import Map from "./components/Map";
-import Form from "./components/Form";
+import Home from "./Pages/Home";
+
 
 const App = () => {
+    // useEffect(()=>{
+    //   const getData = async ()=> {
+    //     const Res =  await fetch('http://localhost:5000/api/auth/crops');
+    //     const Data = await Res.json();
+    //     console.log(Data)
+    //   }
+    //   getData();
+    // },[])
   return (
     <>
-      <Form />
-      <Map />
+      <Home/>
+      
     </>
   );
 };
