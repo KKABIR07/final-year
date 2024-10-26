@@ -1,5 +1,6 @@
 
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom";
 const StateDisplay = () => {
   const State = useSelector((state) => state.Stateval.value);
   
@@ -9,7 +10,9 @@ const StateDisplay = () => {
       <div id="img" className="overflow-hidden rounded-md">
         <img src={State.img} className="h-72 w-full hover:scale-110 transition-all ease-in-out duration-500"/>
       </div>
-      <button className=" border border-green-500 hover:bg-green-600 p-3 rounded-md hover:text-white">Know more</button>
+      <button className=" border border-green-500 hover:bg-green-600 p-3 rounded-md hover:text-white">
+        <Link to={`/stateData/${State.name}`}>Know more</Link>
+        </button>
     </div>
   )
 }
