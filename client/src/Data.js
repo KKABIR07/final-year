@@ -25,7 +25,7 @@ export const Statearr = [
   { id: "TG", name: "Telangana", img: "" },
   { id: "TR", name: "Tripura", img: "" },
   { id: "UP", name: "Uttar Pradesh", img: "" },
-  { id: "UK", name: "Uttarakhand", img: "" },
+  { id: "UK", name: "Uttaranchal", img: "" },
   { id: "WB", name: "West Bengal", img: "images/WB.jpg" },
   { id: "AN", name: "Andaman and Nicobar Islands", img: "" },
   { id: "CH", name: "Chandigarh", img: "" },
@@ -33,5 +33,6 @@ export const Statearr = [
   { id: "DL", name: "Delhi", img: "" },
   { id: "JK", name: "Jammu and Kashmir", img: "" },
   { id: "LD", name: "Lakshadweep", img: "" },
-  { id: "PY", name: "Puducherry", img: "" }
+  { id: "PY", name: "Puducherry", img: "" },
+  { id: "LA", name: "Ladakh", img: "" }
 ];
