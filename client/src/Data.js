@@ -11,7 +11,7 @@ export const Statearr = [
   { id: "JH", name: "Jharkhand", img: "images/JH.png" },
   { id: "KA", name: "Karnataka", img: "images/KA.png" },
   { id: "KL", name: "Kerala", img: "images/KL.png" },
-  { id: "MP", name: "Madhya Pradesh", img: "images/MP.png" },
+  { id: "MP", name: "Madhya Pradesh", img: "images/MP.jpg" },
   { id: "MH", name: "Maharashtra", img: "images/MH.png" },
   { id: "MN", name: "Manipur", img: "images/MN.png" },
   { id: "ML", name: "Meghalaya", img: "images/ML.png" },

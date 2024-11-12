@@ -6,7 +6,7 @@ const Map = () => {
   return (
     
     <div style={{height:'100vh', width:'50%'}} className="content">
-     
+     <h1 className=" pr-[240px] py-1 text-4xl text-white">INDIA</h1>
      
       <svg
         baseProfile="tiny"
