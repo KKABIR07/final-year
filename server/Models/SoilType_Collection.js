@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const soilTypeSchema = new mongoose.Schema({
+  img: {
+    type: String,
+    required: true,
+  },
   type_name: {
     type: String,
     required: true,  
@@ -24,6 +28,10 @@ const soilTypeSchema = new mongoose.Schema({
   },
   region: {
     type: [String],  
+  },
+  Description:{
+    type:String,
+    required: true,
   }
 });
 

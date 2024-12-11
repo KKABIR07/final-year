@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const cropSchema = new mongoose.Schema({
+  img: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -41,6 +45,10 @@ const cropSchema = new mongoose.Schema({
   },
   cultivation_practices: {
     type: String,
+    required: true,
+  },
+  Description:{
+    type:String,
     required: true,
   }
 });

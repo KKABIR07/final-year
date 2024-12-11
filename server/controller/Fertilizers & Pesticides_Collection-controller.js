@@ -14,6 +14,7 @@ const getFertilizerPesticideData = async (req, res) => {
 const postFertilizer = async (req, res) => {
     try {
         const { 
+            img,
             product_name, 
             crop_applicable, 
             region, 
@@ -26,6 +27,7 @@ const postFertilizer = async (req, res) => {
         
 
         const newFertilizer = new FertilizerPesticide({
+            img,
             product_name,
             crop_applicable,
             region,
@@ -43,5 +45,21 @@ const postFertilizer = async (req, res) => {
     }
 };
 
+const get_Fertilizer_Byname = async (req, res) => {
+    try {
+      const product_name = req.params.product_name;
+      
+      const agri = await FertilizerPesticide.findOne({ product_name: product_name });
+      
+      if (!agri) {
+        return res.status(404).json({ message: "product_name not found" });
+      }
+      return res.status(200).json(agri);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
 
-module.exports = { getFertilizerPesticideData,postFertilizer };
+
+module.exports = { getFertilizerPesticideData,postFertilizer,get_Fertilizer_Byname };

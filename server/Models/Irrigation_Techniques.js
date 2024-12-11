@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const irrigationTechniqueSchema = new mongoose.Schema({
+  img: {
+    type: String,
+    required: true,
+  },
   technique_name: {
     type: String,
     required: true,  
@@ -23,6 +27,10 @@ const irrigationTechniqueSchema = new mongoose.Schema({
   },
   efficiency: {
     type: Number,  
+    required: true,
+  },
+  Description:{
+    type:String,
     required: true,
   }
 });

@@ -14,20 +14,9 @@ const getCropData = async (req, res) => {
 
 const postCropData = async (req, res) => {
     try {
-        // Extracting data from req.body
+        
         const {
-            name,
-            scientific_name,
-            season,
-            soil_type,
-            rainfall_requirement,
-            crop_duration,
-            yield_per_hectare,
-            cultivation_practices
-        } = req.body;
-
-        // Create a new crop instance
-        const newpostCropData = new Crop({
+            img,
             name,
             scientific_name,
             season,
@@ -36,9 +25,24 @@ const postCropData = async (req, res) => {
             crop_duration,
             yield_per_hectare,
             cultivation_practices,
+            Description
+        } = req.body;
+
+       
+        const newpostCropData = new Crop({
+            img,
+            name,
+            scientific_name,
+            season,
+            soil_type,
+            rainfall_requirement,
+            crop_duration,
+            yield_per_hectare,
+            cultivation_practices,
+            Description
         });
 
-        // Save the new crop to the database
+        
         await newpostCropData.save();
 
         return res.status(200).json({ message: "Crop data saved successfully" });
@@ -48,6 +52,20 @@ const postCropData = async (req, res) => {
     }
 };
 
+const getCrops_collection_Byname = async (req, res) => {
+    try {
+      const Name = req.params.name;
+      
+      const agri = await Crop.findOne({ name: Name });
+      
+      if (!agri) {
+        return res.status(404).json({ message: "Crop name not found" });
+      }
+      return res.status(200).json(agri);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
 
-
-module.exports = { getCropData,postCropData };
+module.exports = { getCropData,postCropData,getCrops_collection_Byname };

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const pestDiseaseSchema = new mongoose.Schema({
+  img: {
+    type: String,
+    required: true,
+  },
   pest_name: {
     type: String,
     required: true,  

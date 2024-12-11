@@ -14,6 +14,7 @@ const getPestDiseaseData = async (req, res) => {
 const postPest = async (req, res) => {
     try {
         const { 
+            img,
             pest_name, 
             disease_name, 
             affected_crops, 
@@ -26,6 +27,7 @@ const postPest = async (req, res) => {
         
 
         const newPestDisease = new PestDisease({
+            img,
             pest_name, 
             disease_name, 
             affected_crops, 
@@ -43,4 +45,20 @@ const postPest = async (req, res) => {
     }
 };
 
-module.exports = { getPestDiseaseData,postPest };
+const get_Pest_Byname = async (req, res) => {
+    try {
+      const pest_name = req.params.pest_name;
+      
+      const agri = await PestDisease.findOne({ pest_name: pest_name });
+      
+      if (!agri) {
+        return res.status(404).json({ message: "pest_name not found" });
+      }
+      return res.status(200).json(agri);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+module.exports = { getPestDiseaseData,postPest,get_Pest_Byname };

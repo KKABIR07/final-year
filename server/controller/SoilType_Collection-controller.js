@@ -14,23 +14,27 @@ const getSoilTypeData = async (req, res) => {
 const postSoil = async (req, res) => {
     try {
         const { 
+            img,
             type_name, 
             properties, 
             water_retention, 
             fertility, 
             suitable_crops, 
-            region            
+            region,
+            Description            
         } = req.body;
 
         
 
         const newSoilTypes = new SoilType({
+            img,
             type_name, 
             properties, 
             water_retention, 
             fertility, 
             suitable_crops, 
-            region  
+            region,
+            Description  
         });
 
         const savedSoilTypes = await newSoilTypes.save();
@@ -41,4 +45,21 @@ const postSoil = async (req, res) => {
     }
 };
 
-module.exports = { getSoilTypeData,postSoil };
+const get_Soil_Byname = async (req, res) => {
+    try {
+      const type_name = req.params.type_name;
+      
+      const agri = await SoilType.findOne({ type_name: type_name });
+      
+      if (!agri) {
+        return res.status(404).json({ message: "pest_name not found" });
+      }
+      return res.status(200).json(agri);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+
+module.exports = { getSoilTypeData,postSoil,get_Soil_Byname };

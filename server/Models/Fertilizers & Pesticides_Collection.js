@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const fertilizerPesticideSchema = new mongoose.Schema({
+  img: {
+    type: String,
+    required: true,
+  },
   product_name: {
     type: String,
     required: true,  
