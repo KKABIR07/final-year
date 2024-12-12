@@ -3,9 +3,6 @@ import { useState } from "react";
 const Form = () => {
 
 
-  
-
-
   const [cropTypes, setCropTypes] = useState([{ cropCount: 1 }]);
 
   const [season, setSeason] = useState(""); //currnt input

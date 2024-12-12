@@ -1,7 +1,8 @@
-import  { useEffect } from "react";
+
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom"
 import Home from "./Pages/Home";
+import StateData from "./Pages/StateData";
 
 
 const App = () => {
@@ -15,7 +16,10 @@ const App = () => {
     // },[])
   return (
     <>
-      <Home/>
+     <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/stateData/:state" element={<StateData/>}/>
+     </Routes>
       
     </>
   );
