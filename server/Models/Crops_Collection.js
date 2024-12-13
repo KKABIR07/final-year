@@ -36,11 +36,11 @@ const cropSchema = new mongoose.Schema({
     required: true,
   },
   crop_duration: {
-    type: Number,
+    type: String,
     required: true, 
   },
   yield_per_hectare: {
-    type: Number,
+    type: String,
     required: true, 
   },
   cultivation_practices: {
