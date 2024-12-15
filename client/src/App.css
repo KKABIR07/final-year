@@ -1,26 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
 }
+body{
+  font-family: 'Montserrat', sans-serif;
+}
 
-svg path {
-  fill: greenyellow;
+.Nav{
+  background: rgba(255, 255, 255, 0.2);
+  
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+  background-image: url(images/logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content svg path {
+  fill: #98FB98;
   stroke: black;
   stroke-width: .25;
-  
+  z-index: 10; 
+  pointer-events: auto;
+  cursor: pointer;
 }
 
-svg path:hover {
-   fill: green;
-   transition: 0.6s;
-   cursor: pointer;
+.content svg path:hover {
+   fill: #50C878;
+   transform: scale(1.02); 
+   
+   transition: transform 0.6s ease, fill 0.3s ease;
+   
+   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
 }
-
+.content svg path:focus{
+  outline: none;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .video-background {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   overflow: hidden;
+   background: linear-gradient(-45deg, #85C77E, #eec10f, #59e413, #E67E22, #6E4F3A);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite; 
 }
 
 .video-background video {
@@ -29,8 +69,8 @@ svg path:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the div */
-  z-index: 1; /* Sends the video behind the content */
+  object-fit: cover; 
+  z-index: 1;
   
 }
 
@@ -44,6 +84,19 @@ svg path:hover {
   z-index: 1; /* Ensures the content appears above the video */
 }
 
+.side{
+  position: absolute;
+  right: 0;
+  top: 8%;
+  
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
 .content-2 {
   position: absolute;
   top: 50%;
@@ -55,5 +108,48 @@ svg path:hover {
 }
 
 .data-div{
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-text{
+  
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+
+  }
+  
+.know-btn{
+  background: linear-gradient(135deg, #28a745, #00c853);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card {
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #FFF9E6;
+  padding: 20px;
+  
+  border: 1px solid transparent;
+  border-left: 5px solid #FFD700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-text{
+  background: linear-gradient(to right, #FFF9C4, #FFECB3);
+
 }
