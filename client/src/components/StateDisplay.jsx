@@ -6,7 +6,7 @@ const StateDisplay = () => {
   
   return (
     <div className="rounded-md p-5 flex flex-col gap-3 items-center content-2 data-div" >
-      <h1 className="text-2xl font-semibold text-white state-head">{State.name.toUpperCase()}</h1>
+      <h1 className="text-2xl font-semibold text-black state-head">{State.name.toUpperCase()}</h1>
       <div id="img" className="overflow-hidden rounded-md">
         <img src={State.img} className="h-72 w-full hover:scale-110 transition-all ease-in-out duration-500"/>
       </div>

@@ -6,7 +6,7 @@ const Map = () => {
   const dispatch = useDispatch();
   return (
     
-    <div style={{height:'90vh', width:'50%'}} className="content pt-4">
+    <div style={{height:'97vh', width:'55%'}} className="content pt-4">
 
      {/* <h1 className=" pr-[258px] py-1 text-4xl text-white">INDIA</h1> */}
      
@@ -21,7 +21,7 @@ const Map = () => {
         style={{width: "100%", height: "100%", objectFit: "contain"}}
         
       >
-        <text x="500" y="200" fontSize="48" fill="white" textAnchor="bottom">INDIA</text>
+        <text x="500" y="200" fontSize="48" fill="black" textAnchor="bottom">INDIA</text>
         <g id="features">
         <Tippy content="Andaman & Nicobar Islands">
           <path

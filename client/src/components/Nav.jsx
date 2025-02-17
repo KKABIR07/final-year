@@ -7,6 +7,7 @@ const Nav = ({side , setSide}) => {
   return (
     <div className=" flex justify-between p-2 items-center Nav">
       <div className="logo h-10 w-10 rounded-lg"></div>
+      <h2 className="text-black font-semibold text-xl">PRECISION AGRICULTURE FRAMEWORK</h2>
       <div className="flex gap-2">
         <div className="search flex gap-2  items-center">
           <input type="text" className="rounded-md p-1 focus:outline-none"/>
