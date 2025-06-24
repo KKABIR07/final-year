@@ -77,7 +77,7 @@ const StateData = () => {
                   <div
                     key={i}
                     onClick={() => showModal(x.Name)}
-                    className="min-w-[350px] p-4 rounded-md bg-white hover:bg-gray-100 cursor-pointer shadow-md transition-transform duration-300 transform hover:scale-105 flex flex-col gap-5"
+                    className="min-w-[350px] p-4 rounded-md bg-white hover:bg-gray-100 cursor-pointer shadow-md transition-transform duration-300 transform hover:scale-105 flex flex-col gap-5 overflow-x-auto"
                   >
                     <h2 className="text-lg text-[#2C7A4B] font-semibold mb-2 truncate">🌱 {x.Name}</h2>
                     <p className="text-sm"><strong>📅 Growing Seasons:</strong> {x.GrowingSeasons.join(", ")}</p>
